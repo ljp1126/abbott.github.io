@@ -3,7 +3,7 @@ const themeConfig = require('./config/theme/')
 module.exports = {
   base: '/',
   title: 'Abbott',
-  description: '接天莲叶无穷碧，映日荷花别样红',
+  description: '接天莲叶无穷碧，映日荷花别样红666',
   dest: 'docs/.vuepress/dist',
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
