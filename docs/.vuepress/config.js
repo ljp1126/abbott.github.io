@@ -3,7 +3,7 @@ const themeConfig = require('./config/theme/')
 module.exports = {
   base: '/',
   title: 'Abbott',
-  description: '正道的光，照在了大地上啊！把每个...',
+  description: '接天莲叶无穷碧，映日荷花别样红',
   dest: 'docs/.vuepress/dist',
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
@@ -16,7 +16,7 @@ module.exports = {
     lineNumbers: true
   },
   plugins: [
-    '@vuepress/medium-zoom',
+    '@vuepress/plugin-medium-zoom',
     'flowchart',
     '@vuepress-reco/vuepress-plugin-loading-page',
     // 看板娘
