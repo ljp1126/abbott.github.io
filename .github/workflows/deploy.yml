@@ -7,8 +7,8 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
 
-    - name: abbott.github.io
-      uses: ljp1126/abbott.github.io@master
+    - name: Build and Deploy
+      uses: jenkey2011/vuepress-deploy@1.0.1
       env:
         ACCESS_TOKEN: ${{ secrets.TOKEN }}
         TARGET_REPO: username/repo
