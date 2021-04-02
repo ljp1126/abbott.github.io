@@ -10,7 +10,7 @@ jobs:
     - name: abbott.github.io
       uses: ljp1126/abbott.github.io@master
       env:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        ACCESS_TOKEN: ${{ secrets.TOKEN }}
         TARGET_REPO: username/repo
         TARGET_BRANCH: master
         BUILD_SCRIPT: yarn && yarn build
