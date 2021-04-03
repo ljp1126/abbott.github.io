@@ -1,7 +1,7 @@
 const themeConfig = require('./config/theme/')
 
 module.exports = {
-  base: '/',
+  base: '/abbott.github.io',
   title: 'Abbott',
   description: '接天莲叶无穷碧，映日荷花别样红666',
   dest: 'public',
