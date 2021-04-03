@@ -1,12 +1,12 @@
 const themeConfig = require('./config/theme/')
 
 module.exports = {
-  base: '/abbott.github.io',
+  base: '/abbott.github.io/',
   title: 'Abbott',
   description: '接天莲叶无穷碧，映日荷花别样红666',
-  dest: 'public',
+  dest: 'docs/.vuepress/dist',
   head: [
-    ['link', { rel: 'icon', href: '/favicon.ico' }],
+    ['link', { rel: 'icon', href: '/abbott.github.io/favicon.ico' }],
     ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }]
   ],
   theme: 'reco',
@@ -48,7 +48,7 @@ module.exports = {
     [
       "dynamic-title",
       {
-        showIcon: "/favicon.ico",
+        showIcon: "/abbott.github.io/favicon.ico",
         showText: "(/≧▽≦/)老板好！",
         hideIcon: "/failure.ico",
         hideText: "(●—●)快快回来！",
@@ -73,7 +73,7 @@ module.exports = {
         // },
         {
           type: 'image',
-          src: '/wechat.jpeg'
+          src: '/abbott.github.io/wechat.jpeg'
         }
       ],
       // footer: [
