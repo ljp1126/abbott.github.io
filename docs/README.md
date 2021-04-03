@@ -1,11 +1,11 @@
 ---
 home: true
-bgImage: '/abbott.github.io/bannerW.webp'
+bgImage: '/bannerW.webp'
 bgImageStyle: {
   height: '450px'
 }
-faceImage: '/abbott.github.io/avatar.jpg'
-heroImage: /abbott.github.io/avatar.jpg
+faceImage: '/avatar.jpg'
+heroImage: /avatar.jpg
 heroImageStyle: {
   maxHeight: '200px',
   display: block,
