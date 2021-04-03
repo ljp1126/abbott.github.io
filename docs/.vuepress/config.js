@@ -4,7 +4,7 @@ module.exports = {
   base: '/',
   title: 'Abbott',
   description: '接天莲叶无穷碧，映日荷花别样红666',
-  dest: 'docs/.vuepress/dist',
+  dest: 'public',
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
     ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }]
