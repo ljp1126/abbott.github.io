@@ -62,32 +62,33 @@ module.exports = {
     //     appKey: 'E0Ae8xnQUmiCUesRH42CA48H', // your appKey
     //   }
     // }],
-    ['@vuepress-reco/vuepress-plugin-bulletin-popover', {
-      // width: '300px', // 默认 260px
-      title: '个人微信:18297935880',
-      body: [
-        // {
-        //   type: 'title',
-        //   content: '',
-        //   style: 'text-aligin: center;'
-        // },
-        {
-          type: 'image',
-          src: '/abbott.github.io/wechat.jpeg'
-        }
-      ],
-      // footer: [
-      //   {
-      //     type: 'button',
-      //     text: '微信',
-      //     link: '/wechat.jpeg'
-      //   },
-      //   {
-      //     type: 'button',
-      //     text: '支付宝',
-      //     link: '/alipay.jpeg'
-      //   }
-      // ]
-    }]
+    // 配置个人微信图片展示
+    // ['@vuepress-reco/vuepress-plugin-bulletin-popover', {
+    //   // width: '300px', // 默认 260px
+    //   title: '个人微信:18297935880',
+    //   body: [
+    //     // {
+    //     //   type: 'title',
+    //     //   content: '',
+    //     //   style: 'text-aligin: center;'
+    //     // },
+    //     {
+    //       type: 'image',
+    //       src: '/abbott.github.io/wechat.jpeg'
+    //     }
+    //   ],
+    //   // footer: [
+    //   //   {
+    //   //     type: 'button',
+    //   //     text: '微信',
+    //   //     link: '/wechat.jpeg'
+    //   //   },
+    //   //   {
+    //   //     type: 'button',
+    //   //     text: '支付宝',
+    //   //     link: '/alipay.jpeg'
+    //   //   }
+    //   // ]
+    // }]
   ] 
 }  
