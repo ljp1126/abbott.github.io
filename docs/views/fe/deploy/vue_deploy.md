@@ -18,15 +18,12 @@ sidebar: false
 # 创建github工程
 ### 创建一个 username.github.io  的仓库，username是你github的名称
 
-https://username.github.io/blog访问到的只能是master分支的内容，这会带出一个很棘手的问题：“为何我什么都配置了，最后只能显示master代码分支的README.md文件，不是预期的gh-pages分支里的静态文件?”。
-
-解决的办法也有，那就是顺着它的思路，使用mater分支当做build后静态资源存放的分支，代码分支放到别处去。参考[拯救懒癌文档君 - VuePress + Travis CI + Github Pages 自动线上生成文档](https://juejin.im/post/5d0715f6f265da1ba56b1e01)
+使用mater分支当做build后静态资源存放的分支，代码分支放到别处去。
+参考[拯救懒癌文档君 - VuePress + Travis CI + Github Pages 自动线上生成文档](https://juejin.im/post/5d0715f6f265da1ba56b1e01)
 
 # 根据vuepress-theme-reco创建出vuepress工程（qiuzhongrun老哥的教程）
 1. 下载空github工程
 ``` sh
-# 注意你clone你自己的路径哈，下面这个是我的举例
-git clone https://github.com/qiuzhongrun/blog.git
 
 # 进入工程
 cd blog
@@ -65,8 +62,8 @@ yarn build
 ③修正dest目标路径为docs/.vuepress/dist
 ``` javascript
 module.exports = {
-  base: '/blog/', # ①添加base, 为了后面访问的时候有上下文，没有这玩意儿，你访问就会出问题
-  title: "欢迎你，这是我的博客！", # ②修改title，自己看着办哈
+  base: '/blog/', # ①添加base, 为了后面访问的时候有上下文，没有这玩意儿，如果博客地址非一级目录，在这里配置二级目录
+  title: "欢迎你，这是我的博客！",
   description: 'Enjoy when you can, and endure when you must.',
   dest: 'docs/.vuepress/dist', # ③修正dest目标路径为docs/.vuepress/dist，这个必须和稍后的自动部署的local_dir保持一致
   head: [
@@ -81,16 +78,37 @@ module.exports = {
   plugins: ['@vuepress/medium-zoom', 'flowchart'] 
 } 
 ```
+# github page部署及自动化部署
 
-# travis-ci部署
-参考这里的[自动部署](https://vuepress-theme-reco.alexwjj.com/views/other/deploy.html#%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2)，这里不展开讲，只讲一些注意点。
-1. build命令里面写的是`npm run build`，如果你看着不顺眼，可以修改为`yarn build`意思是一个意思。
-2. 设置token的时候，除了delete repo的权限不给，其他都给上吧。
-3. 授权travis-ci Manage repositories on GitHub的时候，不要全选，就选你要的就行
-4. 要在https://github.com/qiuzhongrun/blog/settings，也就是你的github repository的Settings里修改Github Pages的Source为gh-pages，这个分支你可以自己建，也可以等第一次跑完travis-ci它自动创建好后再选。
+ 1. 项目名称为 username.github.io username可以和github名称一样，我的项目和github名称不同，在base配置地址的时候加上二级目录，否则会静态文件404
+ 2. 配置deploy key，是git ssh
+ 3. 配置secrets token  token获取 参考（https://blog.csdn.net/u014175572/article/details/55510825）
+ 4. 配置deploy.yml文件  .github\workflows\deploy.yml 如下为我自己博客项目自动化构建配置，自己项目配置请相应做修改名称
+  ``` javascript
+    name: Build and Deploy
+    on: [push]
+    jobs:
+      build-and-deploy:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Checkout
+          uses: actions/checkout@master
 
+        - name: Build and Deploy
+          uses: jenkey2011/vuepress-deploy@1.0.1
+          env:
+            ACCESS_TOKEN: ${{ secrets.TOKEN }}
+            TARGET_REPO: ljp1126/abbott.github.io
+            TARGET_BRANCH: master
+            BUILD_SCRIPT: yarn && yarn build
+            BUILD_DIR: docs/.vuepress/dist/
+  ```
 
-到此，只要push一次代码，就会触发travis-ci自动build，推送到指定分支(gh-pages)，然后你在https://qiuzhongrun.github.io/blog就可以访问到了。
+5. 静态文件配置为master，也可重新指定
+6. 代码分支为其他分支，这样提交代码就会自动触发actions构建
+7. 构建完成，就生成了自己的博客
+
+到此，只要push一次代码，就会触发action自动build，推送到指定分支(master)，然后你就可以访问到了。
 
 # 后记
 后续使用的时候，发现一些问题，这里也记录下来以供参考。

@@ -6,7 +6,7 @@ date: 2020-01-01
 isComment: true
 sidebar: false
 ---
-> 热爱生活，记录生活，永不磨灭的过去
+> 热爱生活，记录生活
 
 <!-- more -->
 
@@ -16,17 +16,16 @@ sidebar: false
 3. 前端小菜
 :::
 
-<!-- ## 一：科班自学一个月前端历程 -->
-<!-- [简书记录前端自学的30天](https://www.jianshu.com/u/81a990ed5eff) -->
+## 一：前端学习历程
+## 二：自我总结经验
 
-<!-- [github主页](https://abbott.github.io/) -->
+[github主页](https://github.com/ljp1126)
 
+## 项目
 
-<!-- ## 项目 -->
+个人博客： [基于 vuepress 搭建的个人博客](https://ljp1126.github.io/abbott.github.io/)
 
-<!-- 个人博客： [基于 vuepress 搭建的个人博客](http://abbott.club/)
-
-个人简历在线版：[基于 H5+Css3 搭建的个人在线简历](http://abbott.club:8081/)
+<!-- 个人简历在线版：[基于 H5+Css3 搭建的个人在线简历](http://abbott.club:8081/)
 
 vue 电商管理系统：[基于 vue+elementUI 搭建的电商管理系统](http://abbott.club:8082/)
 

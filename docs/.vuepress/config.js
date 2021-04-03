@@ -50,7 +50,7 @@ module.exports = {
       {
         showIcon: "/abbott.github.io/favicon.ico",
         showText: "(/≧▽≦/)老板好！",
-        hideIcon: "/failure.ico",
+        hideIcon: "/abbott.github.io/failure.ico",
         hideText: "(●—●)快快回来！",
         recoverTime: 2000
       }
